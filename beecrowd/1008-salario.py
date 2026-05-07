@@ -10,10 +10,11 @@ Estudante: Luanny Cubas Ramos Silva
 # Processamento: salário = número + horas trabalhadas = total
 # Saída: exibir no formato exato "SAL = R$ valor total" com duas casas decimais
 
-N = int(input())
+N = input()
 H = int(input())
 V = float(input())
 
-SAL = N * H * V
+SAL = H * V
 
-print(f"SALARY=$ { }")
+print(f"NUMBER = {N}")
+print(f"SALARY = U$ {SAL:.2f}")
