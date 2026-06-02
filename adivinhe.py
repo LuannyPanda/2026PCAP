@@ -29,16 +29,20 @@ def jogar(maximo, chances):
 
     return acertou
 niveis = [
+    ["Muito Fácil", 5, 2],
     ["Fácil", 10, 3],
     ["Médio", 100, 5],
-    ["Impossível", 1000, 10],
+    ["Difícil", 1000, 10],
+    ["Impossível", 10000, 20],
 ]
 
 print("Escolha o nível de dificuldade:")
-print("1 - Fácil    (1 a 10, 3 chances)")
-print("2 - Médio    (1 a 100, 5 chances)")
-print("3 - Impossível   (1 a 1000, 10 chances)")
-opcao = int(input("Digite 1, 2 ou 3: "))
+print("1 - Muito fácil    (1 a 5, 2 chances)")
+print("2 - Fácil    (1 a 10, 3 chances)")
+print("3 - Médio    (1 a 100, 5 chances)")
+print("4 - Difícil   (1 a 1000, 10 chances)")
+print("5 - Impossível  (1 a 10000, 20 chances)")
+opcao = int(input("Digite 1, 2, 3 ou 4: "))
 
 nivel = niveis[opcao - 1]
 
