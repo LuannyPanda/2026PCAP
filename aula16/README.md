@@ -6,17 +6,19 @@ O computador sorteia um número e você tenta descobrir dentro de um limite de c
 ## ▶️ Como jogar
 1. Abra o terminal na pasta do jogo.
 2. Rode: python adivinhe.py
-3. Escolha o nível (1, 2 ou 3) e tente adivinhar!
+3. Escolha o nível (1, 2, 3, 4 ou 5) e tente adivinhar!
 
 ## 🎚️ Níveis
+- Muito Fácil .. 1 a 5, 2 chances
 - Fácil ....... 1 a 10, 3 chances
 - Médio ....... 1 a 100, 5 chances
-- Impossível .. 1 a 1000, 10 chances
+- Difícil .. 1 a 1000, 10 chances
+- Impossível .. 1 a 10000, 20 chances
 
 ## 🧠 O que eu pratiquei
 Variáveis e tipos, operadores, entrada/saída, decisão (if/elif/else),
 repetição (while), sub-rotinas (def/return) e listas.
 
 ## 👾 Teste
-A cada nível do processo de criação do jogo ia aumentando a dificuldade de cada nível. 
+A cada parte do processo de criação do jogo ia aumentando a dificuldade de cada nível. Para deixar mais divertido e diverso adicionei mais 2 níveis (Muito Fácil, Difícil).
 Autor: Luanny Cubas Ramos Silva
