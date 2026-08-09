@@ -29,10 +29,11 @@ print(f"Olá {nome}, Tudo bom?")
 
 # 5. Estrutura de Condição == coloca uma condição para que o progama execute
 numero = int(input("Qual número você quer?"))
+
 if numero < 10:
     print("O número é menor que 10!")
-else numero > 10
-    print("O número é maior que 10!")
+else: numero > 10
+print("O número é maior que 10!")
 
 # 6. Estrutura de repetição == permite que um bloco de código seja executado várias vezes
 batata = 0
