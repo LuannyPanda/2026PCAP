@@ -23,7 +23,8 @@ pontos_maquina = 0
 opcoes = ["par", "ímpar"]
 rodada = 1
 
-while pontos_jogador < 3 and pontos_maquina < 3 and rodada <= 5:
+for rodada in range(1, 6):
+    print('--- Rodada', rodada, '---')
     maquina = random.randint(0, 5)
     numero = int(input("Número de(0 a 5): "))
 
@@ -36,7 +37,7 @@ while pontos_jogador < 3 and pontos_maquina < 3 and rodada <= 5:
 
     if jogada not in opcoes:
         print("Jogada Inválida!")
-    else:
+    
         quem = quem_venceu(soma, jogada)
         if quem == "empate":
             print("empate")
