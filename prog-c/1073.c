@@ -10,8 +10,8 @@ int main() {
 
     scanf("%d", &n);
 
-    for (i = ; i <= ; i = i + ) {
-        printf("%d^2 = %d\n", i, );
+    for (i = 2; i <= n; i = i + 2) {
+        printf("%d^2 = %d\n", i, i * i);
     }
 
     return 0;
