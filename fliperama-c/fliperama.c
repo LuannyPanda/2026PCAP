@@ -13,6 +13,7 @@ Data      : 2026.10.20
 #define DONO "LUANNY.PANDA"
 #define CAPACIDADE 50
 #define TAM_APELIDO 20
+#define ARQUIVO "jogadores.csv"
 
 void linha() {
     printf("----------------------------------------------\n");
@@ -113,6 +114,29 @@ void jogar_adivinhe(char apelidos[][TAM_APELIDO], int partidas[], int qtd) {
     }
     printf("Acertou em %d tentativas, %s!\n", tentativas, quem);
 }
+void salvar(char apelidos[][TAM_APELIDO], int partidas[], int qtd) {
+    FILE *arquivo = fopen(ARQUIVO, "W");
+    int i;
+    
+    for (i = 0; i < qtd; i++) {
+        fprintf(arquivo, "%s,%d\n", apelidos[i], partidas[i]);
+    }
+    fclose(arquivo);
+}
+
+int carregar(char apelidos[][TAM_APELIDO], int partidas[]) {
+    FILE *arquivo = fopen(ARQUIVO, "r");
+    int qtd = 0;
+
+    if (arquivo == NULL) {
+        return 0;
+    }
+    while (qtd < CAPACIDADE && fscanf(arquivo, "%19s[^,],%d\n", apelidos[qtd], &partidas[qtd]) == 2) {
+        qtd = qtd + 1;
+    }
+    fclose(arquivo);
+    return qtd;
+}
 
 void mostrar_menu() {
     linha();
@@ -133,7 +157,7 @@ int main() {
 
 
     srand(time(NULL));
-    qtd = 0;
+    qtd = carregar(apelidos, partidas);
 
     mostrar_menu();
     opcao = ler_numero("Sua escolha", 0, 3);
@@ -148,6 +172,7 @@ int main() {
         mostrar_menu();
         opcao = ler_numero("Sua escolha", 0, 3);
     }
+    salvar(apelidos, partidas, qtd);
     titulo("Ate a proxima!");
     return 0;
 }
