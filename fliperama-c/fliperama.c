@@ -167,7 +167,7 @@ int main() {
         }else if (opcao == 2) {
             qtd = cadastrar(apelidos, partidas, qtd);
         }else {
-            listar(apelidos, partidas, qtd);;
+            listar(apelidos, partidas, qtd);
         }
         mostrar_menu();
         opcao = ler_numero("Sua escolha", 0, 3);
