@@ -6,8 +6,8 @@ LIAC      : Menu com validacao
 Data      : 2026.10.20
 */
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
 
 #define DONO "LUANNY.PANDA"
@@ -54,7 +54,7 @@ int buscar(char apelidos[][TAM_APELIDO], int qtd, char procurado[]) {
         }
     }
     return -1;
-}
+}at jogadores.csv
 
 int cadastrar(char apelidos[][TAM_APELIDO], int partidas[], int qtd) {
     char novo[TAM_APELIDO];
@@ -141,7 +141,7 @@ int carregar(char apelidos[][TAM_APELIDO], int partidas[]) {
 void mostrar_menu() {
     linha();
     printf("    FLIPERAMA DA %s\n", DONO);
-    linha();
+    linha();at jogadores.csv
     printf("[1] Adivinhe o Numero\n");
     printf("[2] Cadastrar Jogador\n");
     printf("[3] Listar Jogadores\n");
@@ -174,6 +174,7 @@ int main() {
     }
     salvar(apelidos, partidas, qtd);
     titulo("Ate a proxima!");
+    
     return 0;
 }
 
