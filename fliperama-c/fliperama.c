@@ -115,7 +115,7 @@ void jogar_adivinhe(char apelidos[][TAM_APELIDO], int partidas[], int qtd) {
     printf("Acertou em %d tentativas, %s!\n", tentativas, quem);
 }
 void salvar(char apelidos[][TAM_APELIDO], int partidas[], int qtd) {
-    FILE *arquivo = fopen(ARQUIVO, "W");
+    FILE *arquivo = fopen(ARQUIVO, "w");
     int i;
     
     for (i = 0; i < qtd; i++) {
