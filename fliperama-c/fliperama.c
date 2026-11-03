@@ -131,7 +131,7 @@ int carregar(char apelidos[][TAM_APELIDO], int partidas[]) {
     if (arquivo == NULL) {
         return 0;
     }
-    while (qtd < CAPACIDADE && fscanf(arquivo, "%19s[^,],%d\n", apelidos[qtd], &partidas[qtd]) == 2) {
+    while (qtd < CAPACIDADE && fscanf(arquivo, "%19[^,],%d\n", apelidos[qtd], &partidas[qtd]) == 2) {
         qtd = qtd + 1;
     }
     fclose(arquivo);
