@@ -10,11 +10,11 @@ Data       : 2026.11.05
 #include <functional>
 using namespace std;
 
-int na_mesma_posicao(vector<int> &fila) {
+int na_mesma_posicao(vector<int> fila) {
     vector<int> ordenada = fila;
     int i, iguais = 0, qtd = fila.size();
 
-    sort(ordenada.begin(), ordenada.end(), greater,int>());
+    sort(ordenada.begin(), ordenada.end(), greater<int>());
 
     for (i = 0; i < qtd; i++) {
         if (fila[i] == ordenada[i]) {
@@ -30,11 +30,11 @@ int main() {
 
     cin >> n;
     for (caso = 0; caso < n; caso++) {
-        fila.push_back();
+        fila.clear();
         cin >> m;
         for (i = 0; i < m; i++) {
             cin >> nota;
-            fila.clear(nota);
+            fila.push_back(nota);
         }
         cout << na_mesma_posicao(fila) << endl;
     }
