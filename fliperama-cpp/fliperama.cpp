@@ -7,6 +7,7 @@ Data       : 2026.11.17
 */
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
 #define DONO "LUANNY.PANDA"
@@ -36,6 +37,38 @@ int ler_numero(string mensagem, int minimo, int maximo) {
     }
     return numero;
 }
+
+string ler_texto(string mensagem) {
+    string texto;
+
+    cout << mensagem << ": ";
+    cin >> texto;
+    return texto;
+}
+
+void cadastrar(vector<string> &apelidos, vector<int> &partidas) {
+    string novo;
+
+    titulo("NOVO JOGADOR");
+    novo = ler_texto("Apelido (sem espacos)");
+
+    apelidos.push_back(novo);
+    partidas.push_back(0);
+    cout << "Jogador " << novo << " cadastro." << endl;
+}
+
+void listar (vector<string> &apelidos, vector<int> &partidas) {
+    int i, qtd = apelidos.size();
+
+    titulo("JOGADORES CADASTRADOS");
+    if (qtd == 0) {
+        cout << "Nenhum jogador cadastrado ainda." << endl;
+    }
+    for (i = 0; i < qtd; i++) {
+        cout << apelidos[i] << " | " << partidas[i] << " partidas" << endl;
+    }
+}
+
 void mostrar_menu() {
     linha();
     cout << "   FLIPERAMA DA " << DONO << endl;
@@ -48,6 +81,8 @@ void mostrar_menu() {
 }
 
 int main() {
+    vector<string> apelidos;
+    vector<int> partidas;
     int opcao;
 
     mostrar_menu();
@@ -56,9 +91,9 @@ int main() {
         if (opcao == 1) {
             cout << "O jogo entra na Fase 3." << endl;
         } else if (opcao == 2) {
-            cout << "O cadastro entra na Fase 2." << endl;
+            cadastrar(apelidos, partidas);
         } else {
-            cout << "A lista entra na Fase 2." << endl;
+            listar(apelidos, partidas);
         }
         mostrar_menu();
         opcao = ler_numero("Sua escolha", 0, 3);
